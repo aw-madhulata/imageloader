@@ -1,0 +1,35 @@
+<div class="grid">
+  <div class="blur-load">
+    <img src="https://loremflickr.com/640/360" alt="Sample" loading="lazy" /> 
+  </div>
+  <div class="blur-load">
+    <img src="https://placekitten.com/640/360" alt="Kitten" loading="lazy" />
+  </div>
+  <div class="blur-load">
+    <img src="https://baconmockup.com/640/360" alt="Bacon" loading="lazy" />
+  </div>
+  <div class="blur-load">
+    <img src="https://placebeard.it/640x360" alt="Beard" loading="lazy" />
+  </div>
+  <div class="blur-load">
+    <img src="https://placebear.com/640/360" alt="Bear" loading="lazy" />
+  </div>
+  <div class="blur-load">
+    <img src="https://picsum.photos/640/360" alt="Sample" loading="lazy" />
+  </div>
+</div>
+<script>
+const blurredImageDivs = document.querySelectorAll(".blur-load");
+blurredImageDivs.forEach(div => {
+  const img = div.querySelector("img");
+  function loaded() {
+  //  console.log("Image loaded");
+   div.classList.add("loaded");
+  }
+  if (img.complete) {
+    loaded();
+  } else {
+    img.addEventListener("load", loaded)
+  }
+});
+</script>
